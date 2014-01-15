@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @domain.Name %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @domain.Adress %>
+</p>
+
+<p>
+  <strong>Expiration:</strong>
+  <%= @domain.Expiration %>
+</p>
+
+<p>
+  <strong>Responsible:</strong>
+  <%= @domain.Responsible %>
+</p>
+
+<%= link_to 'Edit', edit_domain_path(@domain) %> |
+<%= link_to 'Back', domains_path %>
