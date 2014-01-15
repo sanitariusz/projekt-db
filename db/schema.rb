@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115112556) do
+ActiveRecord::Schema.define(version: 20140115183225) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -41,43 +41,44 @@ ActiveRecord::Schema.define(version: 20140115112556) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "Name"
-    t.string   "Surname"
+    t.string   "name"
+    t.string   "surname"
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "domains", force: true do |t|
-    t.string   "Name"
-    t.string   "Adress"
-    t.date     "Expiration"
-    t.string   "Responsible"
+    t.string   "name"
+    t.string   "adress"
+    t.date     "expiration"
+    t.string   "responsible"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hardware_types", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "hardwares", force: true do |t|
-    t.string   "Name"
-    t.string   "Serial"
-    t.string   "Type"
+    t.string   "name"
+    t.string   "serial"
+    t.string   "hardware_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "types", force: true do |t|
-    t.string   "Name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "worker_id"
   end
 
   create_table "workers", force: true do |t|
-    t.string   "Name"
-    t.string   "Surname"
-    t.string   "Email"
-    t.string   "Superior"
-    t.integer  "Phone"
-    t.string   "Login"
+    t.string   "name"
+    t.string   "surname"
+    t.string   "email"
+    t.string   "superior"
+    t.integer  "phone"
+    t.string   "login"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

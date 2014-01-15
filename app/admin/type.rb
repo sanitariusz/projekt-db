@@ -1,13 +1,13 @@
 ActiveAdmin.register Type do
   menu :priority => 4
-  permit_params :Name
+  permit_params :name
   actions :all, except: [:destroy]
   index do
-   column :Name
+   column :name
    actions
   end
 
-filter :Name
+filter :name
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

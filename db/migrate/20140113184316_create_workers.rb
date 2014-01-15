@@ -1,12 +1,12 @@
 class CreateWorkers < ActiveRecord::Migration
   def change
     create_table :workers do |t|
-      t.string :Name
-      t.string :Surname
-      t.string :Email
-      t.string :Superior
-      t.integer :Phone
-      t.string :Login
+      t.string :name
+      t.string :surname
+      t.string :email
+      t.string :superior
+      t.integer :phone
+      t.string :login
 
       t.timestamps
     end

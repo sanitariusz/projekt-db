@@ -1,7 +1,7 @@
 class CreateTypes < ActiveRecord::Migration
   def change
-    create_table :types do |t|
-      t.string :Name
+    create_table :hardware_types do |t|
+      t.string :name
 
       t.timestamps
     end

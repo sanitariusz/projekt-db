@@ -1,19 +1,19 @@
 ActiveAdmin.register Domain do
   menu :priority => 5
-  permit_params :Name, :Adress, :Expiration, :Responsible
+  permit_params :name, :adress, :expiration, :responsible
   actions :all, except: [:show, :destroy]
   index do
-   column :Name
-   column :Adress
-   column :Expiration
-   column :Responsible
+   column :name
+   column :adress
+   column :expiration
+   column :responsible
    actions
   end
 
-filter :Name
-filter :Adress
-filter :Expiration
-filter :Responsible
+filter :name
+filter :adress
+filter :expiration
+filter :responsible
 
   
   # See permitted parameters documentation:

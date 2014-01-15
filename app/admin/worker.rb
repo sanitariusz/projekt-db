@@ -1,20 +1,21 @@
 ActiveAdmin.register Worker do
   menu :priority => 2
-  permit_params :Name, :Surname, :Email, :Superior, :Phone, :Login
+  permit_params :name, :surname, :email, :superior, :phone, :login
   actions :all, except: [:show, :destroy]
+
   index do
-   column :Name
-   column :Surname
-   column :Email
-   column :Superior
-   column :Phone
-   column :Login
+   column :name
+   column :surname
+   column :email
+   column :superior
+   column :phone
+   column :login
    actions
   end
 
-filter :Name
-filter :Surname
-filter :Email
+filter :name
+filter :surname
+filter :email
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

@@ -3,8 +3,8 @@ ActiveAdmin.register AdminUser do
 
   index do
     column :email
-    column :Name
-    column :Surname
+    column :name
+    column :surname
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
@@ -12,13 +12,13 @@ ActiveAdmin.register AdminUser do
   end
 
   filter :email
-  filter :Name
-  filter :Surname
+  filter :name
+  filter :surname
 
   form do |f|
     f.inputs "Admin Details" do
-      f.input :Name
-      f.input :Surname
+      f.input :name
+      f.input :surname
       f.input :email
       f.input :password
       f.input :password_confirmation

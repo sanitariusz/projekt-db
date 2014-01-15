@@ -1,18 +1,21 @@
 ActiveAdmin.register Hardware do
   menu :priority => 3
-  permit_params :Name, :Serial, :Type
+  permit_params :name, :serial, :type
   actions :all, except: [:show, :destroy]
   index do
-    column :Name
-    column :Serial
-    column :Type
+    column :name
+    column :serial
+    column :worker do |hard|
+      hard.worker
+    end
+    column :type
     column :created_at
     actions
   end
 
-filter :Name
-filter :Serial
-filter :Type
+filter :name
+filter :serial
+filter :type
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
