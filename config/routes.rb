@@ -1,5 +1,5 @@
 Projekt::Application.routes.draw do
-  resources :types
+  resources :hardware_types
 
   resources :domains
 

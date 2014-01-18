@@ -1,7 +1,8 @@
 class Worker < ActiveRecord::Base
   has_many :hardwares
+  has_many :domains
 
-  validates :name, :surname, presence: true
+  validates :name, :surname, :email,  presence: true
   validates :name, uniqueness: { scope: :surname }
   #
   #def to_s
