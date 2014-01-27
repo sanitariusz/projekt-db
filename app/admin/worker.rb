@@ -1,7 +1,7 @@
 ActiveAdmin.register Worker do
   menu :priority => 2
   permit_params :name, :surname, :email, :superior, :phone, :login
-  actions :all, except: [:show, :destroy]
+  actions :all
 
   index do
    column :name

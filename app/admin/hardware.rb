@@ -1,7 +1,7 @@
 ActiveAdmin.register Hardware do
   menu :priority => 3
   permit_params :name, :serial, :type
-  actions :all, except: [:destroy]
+  actions :all
   index do
     column :name
     column :serial

@@ -8,7 +8,7 @@ class TypesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:types)
+    assert_not_nil assigns(:hardware_types)
   end
 
   test "should get new" do

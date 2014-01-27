@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117201437) do
+ActiveRecord::Schema.define(version: 20140127133307) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -29,19 +29,19 @@ ActiveRecord::Schema.define(version: 20140117201437) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "admin_users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                             default: "", null: false
+    t.string   "encrypted_password",                default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
+    t.string   "name",                   limit: 60
     t.string   "surname"
   end
 
@@ -74,12 +74,12 @@ ActiveRecord::Schema.define(version: 20140117201437) do
   end
 
   create_table "workers", force: true do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.string   "email"
-    t.string   "superior"
-    t.integer  "phone"
-    t.string   "login"
+    t.string   "name",       limit: 50
+    t.string   "surname",    limit: 60
+    t.string   "email",      limit: 254
+    t.string   "superior",   limit: 40
+    t.string   "phone",      limit: 12
+    t.string   "login",      limit: 30
     t.datetime "created_at"
     t.datetime "updated_at"
   end
