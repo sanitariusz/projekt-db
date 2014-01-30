@@ -1,0 +1,29 @@
+<h1>Listing admittances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Access to</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admittances.each do |admittance| %>
+      <tr>
+        <td><%= admittance.access_to %></td>
+        <td><%= admittance.description %></td>
+        <td><%= link_to 'Show', admittance %></td>
+        <td><%= link_to 'Edit', edit_admittance_path(admittance) %></td>
+        <td><%= link_to 'Destroy', admittance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admittance', new_admittance_path %>

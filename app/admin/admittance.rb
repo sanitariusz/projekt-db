@@ -1,12 +1,9 @@
-ActiveAdmin.register HardwareType do
+ActiveAdmin.register Admittance do
 
-  permit_params :name
-  actions :all, except: [:show, :edit, :destroy]
-  index do
-    column :name
-  end
-
-  filter :name
+  
+  # See permitted parameters documentation:
+  # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
+  #
   # permit_params :list, :of, :attributes, :on, :model
   #
   # or

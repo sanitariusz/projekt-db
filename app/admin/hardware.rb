@@ -1,21 +1,22 @@
 ActiveAdmin.register Hardware do
   menu :priority => 3
-  permit_params :name, :serial, :type
+  permit_params :name, :serial, :type, :worker_id, :hardware_type_id
   actions :all
   index do
     column :name
     column :serial
     column :worker do |hard|
-      hard.worker
+      hard.worker.name + " " +  hard.worker.surname
     end
-    column :type
+    column :hardware_type do |type|
+      type.hardware_type.name
+    end
     column :created_at
     actions
   end
 
 filter :name
 filter :serial
-filter :type
   # permit_params :list, :of, :attributes, :on, :model
   #
   # or

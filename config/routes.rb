@@ -1,4 +1,8 @@
 Projekt::Application.routes.draw do
+  resources :admittances
+
+  resources :softwares
+
   resources :hardware_types
 
   resources :domains
