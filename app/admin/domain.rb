@@ -1,14 +1,13 @@
 ActiveAdmin.register Domain do
-  menu :priority => 5
-  permit_params :name, :adress, :expiration, :responsible
-  actions :all
+  menu :priority => 4
+  permit_params :name, :adress, :expiration, :worker_id
+  actions :all, except: (:show)
   index do
    column :name
    column :adress
    column :expiration
-   column :responsible
-   column :worker do |dom|
-     dom.worker
+   column :responsible do |dom|
+     dom.worker.name + " " + dom.worker.surname
    end
    actions
   end
@@ -16,7 +15,7 @@ ActiveAdmin.register Domain do
 filter :name
 filter :adress
 filter :expiration
-filter :responsible
+filter :worker
 
 
   # permit_params :list, :of, :attributes, :on, :model

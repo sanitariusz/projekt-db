@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127133307) do
+ActiveRecord::Schema.define(version: 20140130132539) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -43,16 +43,31 @@ ActiveRecord::Schema.define(version: 20140127133307) do
     t.datetime "updated_at"
     t.string   "name",                   limit: 60
     t.string   "surname"
+    t.string   "role"
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "admittances", force: true do |t|
+    t.string   "access_to"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "worker_id"
+  end
+
+  create_table "departments", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "domains", force: true do |t|
     t.string   "name"
     t.string   "adress"
     t.date     "expiration"
-    t.string   "responsible"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "worker_id"
@@ -67,21 +82,32 @@ ActiveRecord::Schema.define(version: 20140127133307) do
   create_table "hardwares", force: true do |t|
     t.string   "name"
     t.string   "serial"
-    t.string   "hardware_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "worker_id"
+    t.integer  "hardware_type_id"
+  end
+
+  create_table "softwares", force: true do |t|
+    t.string   "name",       limit: 100
+    t.string   "license"
+    t.date     "buy_date"
+    t.text     "purpose"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "worker_id"
   end
 
   create_table "workers", force: true do |t|
-    t.string   "name",       limit: 50
-    t.string   "surname",    limit: 60
-    t.string   "email",      limit: 254
-    t.string   "superior",   limit: 40
-    t.string   "phone",      limit: 12
-    t.string   "login",      limit: 30
+    t.string   "name",          limit: 50
+    t.string   "surname",       limit: 60
+    t.string   "email",         limit: 254
+    t.string   "superior",      limit: 40
+    t.string   "phone",         limit: 12
+    t.string   "login",         limit: 30
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "department_id"
   end
 
 end

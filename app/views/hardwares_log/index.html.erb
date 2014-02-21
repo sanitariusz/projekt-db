@@ -1,0 +1,30 @@
+<table>
+  Hardwares
+  <tr>
+    <th>Action</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Serial</th>
+    <th>Created</th>
+    <th>Updated</th>
+    <th>Worker Id</th>
+    <th>Hardware Type Id</th>
+  </tr>
+
+  <% @hardwares_log.each do |hlog| %>
+      <tr>
+        <td><%= hlog.action %></td>
+        <td><%= hlog.id %></td>
+        <td><%= hlog.name %></td>
+        <td><%= hlog.serial %></td>
+        <td><%= hlog.created_at %></td>
+        <td><%= hlog.updated_at %></td>
+        <td><%= hlog.worker_id %></td>
+        <td><%= hlog.hardware_type_id %></td>
+      </tr>
+  <% end %>
+</table>
+<table>
+  Softwares
+  <tr></tr>
+</table>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  license: MyString
+  buy_date: 2014-01-29
+  purpose: MyText
+
+two:
+  name: 
+  license: MyString
+  buy_date: 2014-01-29
+  purpose: MyText

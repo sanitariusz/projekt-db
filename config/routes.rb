@@ -1,4 +1,11 @@
 Projekt::Application.routes.draw do
+  get "history/index"
+  resources :departments
+
+  resources :admittances
+
+  resources :softwares
+
   resources :hardware_types
 
   resources :domains

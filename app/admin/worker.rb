@@ -1,7 +1,7 @@
 ActiveAdmin.register Worker do
   menu :priority => 2
-  permit_params :name, :surname, :email, :superior, :phone, :login
-  actions :all
+  permit_params :name, :surname, :email, :superior, :phone, :login, :department_id
+  actions :all, except: (:show)
 
   index do
    column :name
@@ -10,12 +10,16 @@ ActiveAdmin.register Worker do
    column :superior
    column :phone
    column :login
+   column :department do |dep|
+     dep.department.name
+   end
    actions
   end
 
 filter :name
 filter :surname
 filter :email
+filter :department
 
   # permit_params :list, :of, :attributes, :on, :model
   #

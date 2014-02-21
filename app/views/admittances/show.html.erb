@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Access to:</strong>
+  <%= @admittance.access_to %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admittance.description %>
+</p>
+
+<%= link_to 'Edit', edit_admittance_path(@admittance) %> |
+<%= link_to 'Back', admittances_path %>

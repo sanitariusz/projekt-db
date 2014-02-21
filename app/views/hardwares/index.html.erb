@@ -15,9 +15,9 @@
   <tbody>
     <% @hardwares.each do |hardware| %>
       <tr>
-        <td><%= hardware.Name %></td>
-        <td><%= hardware.Serial %></td>
-        <td><%= hardware.Type %></td>
+        <td><%= hardware.name %></td>
+        <td><%= hardware.serial %></td>
+        <td><%= hardware.hardware_type_id %></td>
         <td><%= link_to 'Show', hardware %></td>
         <td><%= link_to 'Edit', edit_hardware_path(hardware) %></td>
         <td><%= link_to 'Destroy', hardware, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,10 +1,11 @@
 ActiveAdmin.register HardwareType do
-
+  menu :priority => 6
   permit_params :name
-  actions :all, except: [:show, :edit, :destroy]
+  actions :all, except: (:show)
   index do
-    column :id
     column :name
+    column("Total") {|total| total.hardwares.count}
+    actions
   end
 
   filter :name

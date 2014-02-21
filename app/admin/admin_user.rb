@@ -1,5 +1,7 @@
 ActiveAdmin.register AdminUser do
-  permit_params :email, :password, :password_confirmation, :Name, :Surname
+  menu :priority => 7, :label => 'Admin Accounts'
+  permit_params :email, :password, :password_confirmation, :name, :surname
+  actions :all, except: (:destroy)
 
   index do
     column :email
@@ -8,7 +10,7 @@ ActiveAdmin.register AdminUser do
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
-    default_actions
+    actions
   end
 
   filter :email
@@ -20,8 +22,10 @@ ActiveAdmin.register AdminUser do
       f.input :name
       f.input :surname
       f.input :email
-      f.input :password
-      f.input :password_confirmation
+ #     if current_admin_user.is_admin?
+  #     f.input :password
+   #    f.input :password_confirmation
+#    end
     end
     f.actions
   end

@@ -7,7 +7,7 @@ ActiveAdmin.setup do |config|
   config.authentication_method = :authenticate_admin_user!
 
   # == User Authorization
-  # config.authorization_adapter = ActiveAdmin::CanCanAdapter
+  # config.authorization_adapter = Authorization
   # config.cancan_ability_class = "Ability"
   # config.on_unauthorized_access = :access_denied
 
@@ -21,7 +21,7 @@ ActiveAdmin.setup do |config|
   # config.logout_link_method = :get
 
   # == Root
-  # config.root_to = 'admin/panel#index'
+  #config.root_to = "panel#index"
 
 
   # == Admin Comments
