@@ -9,7 +9,7 @@ ActiveAdmin.register Hardware do
     column :serial
     column :worker do |hard|
       begin
-        hard.worker.name
+        hard.worker.name + " " + hard.worker.surname
       rescue
         ""
       end
@@ -25,11 +25,11 @@ filter :serial
 filter :worker
 
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs "Edit" do
       f.input :name
       f.input :serial
 
-      f.input :worker
+      f.input :worker, as: :select, :collection => Worker.all.map{ |x| ["#{x.name} #{x.surname }", x.id] }
       #     if current_admin_user.is_admin?
       #     f.input :password
       #    f.input :password_confirmation
