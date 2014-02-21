@@ -3,6 +3,7 @@ ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation, :name, :surname
   actions :all, except: (:destroy)
 
+
   index do
     column :email
     column :name

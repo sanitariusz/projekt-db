@@ -1,7 +1,9 @@
 ActiveAdmin.register Hardware do
   menu :priority => 3
   permit_params :name, :serial, :type, :worker_id, :hardware_type_id
+
   actions :all, except: (:show)
+
   index do
     column :name
     column :serial
@@ -35,7 +37,6 @@ filter :worker
     end
     f.actions
   end
-
   # permit_params :list, :of, :attributes, :on, :model
   #
   # or

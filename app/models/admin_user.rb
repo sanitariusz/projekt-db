@@ -1,12 +1,4 @@
 class AdminUser < ActiveRecord::Base
-#  ROLES = ['admin officer user']
-#
-#  def is_admin?
-#    role == ROLES.admin do
-#      can :all
-#    end
-#  end
-
 
 
   # Include default devise modules. Others available are:

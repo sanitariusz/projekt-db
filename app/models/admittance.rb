@@ -1,3 +1,3 @@
-class Admittance < ActiveRecord::Base
+class Admittance < ActiveRecord::Bases
   belongs_to :worker
 end

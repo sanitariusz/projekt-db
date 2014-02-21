@@ -2,6 +2,7 @@ ActiveAdmin.register Domain do
   menu :priority => 4
   permit_params :name, :adress, :expiration, :worker_id
   actions :all, except: (:show)
+
   index do
    column :name
    column :adress

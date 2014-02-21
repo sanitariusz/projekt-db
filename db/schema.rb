@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140130132539) do
+=======
+ActiveRecord::Schema.define(version: 20140129192945) do
+>>>>>>> 3daec7294a3c4681588e9715f61642108bb6cc3b
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -57,6 +61,7 @@ ActiveRecord::Schema.define(version: 20140130132539) do
     t.integer  "worker_id"
   end
 
+<<<<<<< HEAD
   create_table "departments", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -64,6 +69,8 @@ ActiveRecord::Schema.define(version: 20140130132539) do
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> 3daec7294a3c4681588e9715f61642108bb6cc3b
   create_table "domains", force: true do |t|
     t.string   "name"
     t.string   "adress"
