@@ -1,10 +1,7 @@
 Projekt::Application.routes.draw do
-<<<<<<< HEAD
   get "history/index"
   resources :departments
 
-=======
->>>>>>> 3daec7294a3c4681588e9715f61642108bb6cc3b
   resources :admittances
 
   resources :softwares
